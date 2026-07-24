@@ -74,6 +74,7 @@ nav ul li:hover>a{
     height:100vh;
 
     background-image: url("../Fondo.jpg");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -91,9 +92,13 @@ nav ul li:hover>a{
 }
 
 .contenido{
-    position:relative;
-    width:45%;
-    margin-left:80px;
+    width: 100vw;
+    text-align:center;
+    background:rgba(255,255,255,0.88);
+    padding:45px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    backdrop-filter:blur(5px);
 }
 
 .contenido h2{
@@ -124,4 +129,20 @@ nav ul li:hover>a{
 
 .boton:hover{
     background:#005ea0;
+}
+
+footer{
+    background:#003b5c;
+    color:white;
+    margin-top:60px;
+}
+
+.footer-container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    padding:50px 0;
 }
