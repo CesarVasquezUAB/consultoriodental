@@ -28,10 +28,14 @@ header{
 nav ul{
     display:flex;
     list-style:none;
+    gap:30px;
+    padding:0;
+    margin:0;
+    align-items:center;
 }
 
 nav ul li{
-    position:relative;
+    margin:0;
 }
 
 nav ul li a{
@@ -164,4 +168,28 @@ footer{
     border-radius:15px;
     padding:30px;
     position:relative;
+}
+
+@media (max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+        align-items:center;
+    }
+}
+
+.menu-btn{
+    background:#0d8ce6;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    font-size:25px;
+    cursor:pointer;
+    border-radius:8px;
 }
