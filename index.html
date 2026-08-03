@@ -99,20 +99,22 @@
 </footer>
     <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="cerrar">&times;</span>
+
+            <span class="cerrar">x</span>
+
             <h2>Agenda tu cita</h2>
             <form>
 
-                <input type="text" placeholder="Nombre completo">
-                <input type="tel" placeholder="Teléfono">
-                <input type="date">
-                <input type="time">
-                <textarea placeholder="Motivo de la consulta"></textarea>
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo" required>
+                <input type="tel" placeholder="Teléfono" required>
+                <input type="date" required>
+                <input type="time" required>
+                <textarea placeholder="Motivo de la consulta" required></textarea>
 
                 <button type="submit">Solicitar cita</button>
 
             </form>
-
         </div>
 
     </div>

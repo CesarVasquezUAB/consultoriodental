@@ -161,6 +161,7 @@ footer{
     align-items:center;
 }
 
+
 .modal-content{
     width:90%;
     max-width:500px;
@@ -168,6 +169,35 @@ footer{
     border-radius:15px;
     padding:30px;
     position:relative;
+}
+
+.modal-content h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#0faed6f4;
+}
+
+.modal-content form{
+    display:flex;
+    flex-direction:column;
+}
+
+.modal-content input, .modal-content textarea{
+    margin-bottom:15px;
+    margin-top: 5px;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:20px;
+}
+
+.modal-content button{
+    padding:15px;
+    border:none;
+    background:#0d8ce6;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
 }
 
 @media (max-width:768px){
