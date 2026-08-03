@@ -1,5 +1,7 @@
 const modal = document.getElementById("modal");
 const abrir = document.getElementById("abrirModal");
+const boton = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
 
 abrir.addEventListener("click", function(e){
     e.preventDefault();
@@ -11,4 +13,9 @@ window.addEventListener("click", function(e){
     if(e.target === modal){
         modal.style.display = "none";
     }
+});
+
+
+boton.addEventListener("click", function(){
+    menu.classList.toggle("activo");
 });

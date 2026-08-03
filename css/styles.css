@@ -20,6 +20,7 @@ header{
     z-index:1000;
 }
 
+
 .logo img{
     height:60px;
 }
@@ -203,18 +204,54 @@ footer{
 @media (max-width:768px){
 
     header{
-        flex-direction:column;
-        gap:20px;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        padding:15px 20px;
+    }
+
+    header button{
+        display: flex;
+    }
+
+    .logo{
+        order:2;
+    }
+
+  nav{
+        display:none;
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:white;
+        box-shadow:0 5px 15px rgba(0,0,0,.2);
     }
 
     nav ul{
         flex-direction:column;
         gap:15px;
-        align-items:center;
+        align-items: center;
     }
+
+    nav.activo{
+        display:block;
+    }
+
+    .menubtn{
+        order:1;
+        display:block;
+        background:none;
+        border:none;
+        font-size:30px;
+        cursor:pointer;
+    }
+
 }
 
 .menu-btn{
+    display: none;
     background:#0d8ce6;
     color:white;
     border:none;
