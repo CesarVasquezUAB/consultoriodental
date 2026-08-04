@@ -104,6 +104,27 @@ main{
     margin-bottom: 40px;
 }
 
+#contacto input, #contacto textarea{
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#btn-confirmar{
+    margin-top: 30px;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #c89b5b;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 #mensaje{
     margin-top: 25px;
     padding: 15px;
