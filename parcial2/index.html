@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optica Mirasol</title>
+</head>
+<body>
+
+    <header>
+        <h1>Optica Mirasol</h1>
+        <p>Tus ojos merecen lo mejor, atencion personalizada,
+        examen de la vista y los monturas que mejor van con tu estilo personal, todo en un
+        solo lugar de confianza.</p>
+    </header>
+
+    <main>
+        <form id="form-cita" novalidate method="POST" action="procesar.php">
+
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre">
+
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo">
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje"></textarea>
+
+            <button type="submit">Enviar consulta</button>
+
+            <p id="aviso" class="aviso"></p>
+
+        </form>
+    </main>
+
+    <footer>
+        Parcial 2 - Cesar Romulo Vasquez Soto - 11 de agosto de 2026
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
