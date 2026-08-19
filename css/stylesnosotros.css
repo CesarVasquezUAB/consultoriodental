@@ -1,0 +1,186 @@
+/* Estilos Específicos de la Sección "Sobre Nosotros" */
+
+main {
+    padding-top: 80px; /* Compensación por el Header fijo */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header .subtitle {
+    color: #0d8ce6;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    color: #003b5c;
+    margin-top: 5px;
+}
+
+.section-header .line {
+    width: 60px;
+    height: 3px;
+    background: #0d8ce6;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Grilla del Perfil */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: block;
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: #0d8ce6;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(13, 140, 230, 0.3);
+}
+
+.experience-badge .number {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.experience-badge .text {
+    font-size: 12px;
+    text-align: center;
+}
+
+.about-content h3 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.about-content h3 span {
+    color: #0d8ce6;
+}
+
+.about-content .lead {
+    font-size: 18px;
+    font-weight: 500;
+    color: #003b5c;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.features-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.feature-item h4 {
+    color: #003b5c;
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Grilla de Servicios */
+.services-overview {
+    text-align: center;
+}
+
+.services-overview h3 {
+    font-size: 24px;
+    color: #003b5c;
+    margin-bottom: 30px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.service-card .icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.service-card h4 {
+    color: #003b5c;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .experience-badge {
+        right: 10px;
+        bottom: 10px;
+        padding: 12px 18px;
+    }
+
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+}
