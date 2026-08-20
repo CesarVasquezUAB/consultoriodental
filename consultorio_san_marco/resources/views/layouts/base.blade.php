@@ -35,6 +35,18 @@
                 </li>
 
                 <li><a href="#" id="abrirModal">Contáctanos</a></li>
+
+                @guest
+                <li><a href="#" id="abrirModalLogin" style="font-weight: bold; color: #0d8ce6;">Iniciar Sesión</a></li>
+                @endguest
+
+                @auth
+                <li class="user-menu">
+                    <span style="font-size: 0.9rem;">Hola, {{ Auth::user()->name }}</span>
+                    <a href="#" id="cerrarSesion" style="color: #dc2626; margin-left: 8px;">Salir</a>
+                </li>
+                @endauth
+
             </ul>
         </nav>
     </header>
@@ -114,7 +126,25 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/script.js') }}"></script>
+    <div id="modalLogin" class="modal">
+        <div class="modal-content">
+            <span class="cerrar" id="cerrarLogin">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="formularioLogin">
+                <label for="login_email">Correo</label>
+                <input type="email" id="login_email" name="email" placeholder="Correo" required>
+
+                <label for="login_password">Contraseña</label>
+                <input type="password" id="login_password" name="password" placeholder="Contraseña" required>
+
+                <div id="mensajeErrorLogin" style="color: #dc2626; margin: 10px 0; font-size: 0.9rem;"></div>
+
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>

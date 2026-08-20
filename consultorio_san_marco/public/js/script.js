@@ -10,6 +10,16 @@ const formulario = document.getElementById("formularioCita");
 const modalConfirmacion = document.getElementById("modalConfirmacion");
 const cerrarConfirmacion = document.getElementById("cerrarConfirmacion");
 
+
+const modalLogin = document.getElementById("modalLogin");
+const abrirLogin = document.getElementById("abrirModalLogin");
+const cerrarLogin = document.getElementById("cerrarLogin");
+const formularioLogin = document.getElementById("formularioLogin");
+const cerrarSesionBtn = document.getElementById("cerrarSesion");
+
+
+
+
 abrir.addEventListener("click", function(e){
     e.preventDefault();
     modal.style.display = "flex";
@@ -60,8 +70,6 @@ formulario.addEventListener("submit", async function(e) {
 });
 
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const inputFecha = document.getElementById('date');
     const selectHora = document.getElementById('time');
@@ -93,12 +101,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     manana.setDate(manana.getDate() + 1);
-    inputFecha.min = manana.toISOString().split('T')[0];
+
+    inputFecha.min = manana.toISOString().split('T')[0]; 
 
     inputFecha.addEventListener('change', async () => {
+       
         mensajeError.textContent = '';
         selectHora.innerHTML = '';
 
+      
         if (!inputFecha.value) {
             selectHora.disabled = true;
             selectHora.innerHTML = '<option value="">-- Primero selecciona una fecha --</option>';
@@ -106,7 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const fechaSeleccionada = new Date(inputFecha.value + 'T00:00:00');
+       
         const diaSemana = fechaSeleccionada.getDay(); 
+
+        selectHora.disabled = false;
+        selectHora.innerHTML = '<option value="">-- Selecciona un horario --</option>';
+
 
         if (!agendaSemanal[diaSemana]) {
             mensajeError.textContent = 'No atendemos los domingos ni lunes. Por favor, selecciona de martes a sábado.';
@@ -117,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let ocupados = [];
+
         try {
             const res = await fetch(`/citas-ocupadas?fecha=${inputFecha.value}`);
             ocupados = await res.json();
@@ -124,8 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error al obtener citas:', error);
         }
 
-        selectHora.disabled = false;
-        selectHora.innerHTML = '<option value="">-- Selecciona un horario --</option>';
 
         agendaSemanal[diaSemana].forEach(horario => {
             const opcion = document.createElement('option');
@@ -142,3 +157,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+if (abrirLogin) {
+    abrirLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        modalLogin.style.display = "flex";
+    });
+}
+
+if (cerrarLogin) {
+    cerrarLogin.addEventListener("click", () => {
+        modalLogin.style.display = "none";
+    });
+}
+
+if (formularioLogin) {
+    formularioLogin.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const mensajeError = document.getElementById("mensajeErrorLogin");
+        mensajeError.textContent = "";
+
+        try {
+            const res = await fetch('/login', {
+                method: 'POST',
+                body: new FormData(formularioLogin)
+            });
+
+            const data = await res.json();
+
+            if (res.ok && data.success) {
+                window.location.reload(); 
+            } else {
+                mensajeError.textContent = data.error || 'Error al iniciar sesión.';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            mensajeError.textContent = 'Ocurrió un error al intentar conectar.';
+        }
+    });
+}
+
+if (cerrarSesionBtn) {
+    cerrarSesionBtn.addEventListener("click", async (e) => {
+        e.preventDefault();
+        await fetch('/logout', { method: 'POST' });
+        window.location.reload();
+    });
+}

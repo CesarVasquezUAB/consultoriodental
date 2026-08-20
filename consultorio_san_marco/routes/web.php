@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -55,5 +56,27 @@ Route::post('/guardar-cita', function (Request $request) {
         'updated_at' => now(),
     ]);
 
+    return response()->json(['success' => true]);
+});
+
+
+Route::post('/login', function (Request $request) {
+    $credentials = $request->validate([
+        'email' => 'required|email',
+        'password' => 'required'
+    ]);
+
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
+        return response()->json(['success' => true]);
+    }
+
+    return response()->json(['error' => 'Correo o contraseña incorrectos.'], 401);
+});
+
+Route::post('/logout', function (Request $request) {
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
     return response()->json(['success' => true]);
 });

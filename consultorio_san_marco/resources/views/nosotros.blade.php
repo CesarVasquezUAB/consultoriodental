@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="contenido-nosotros">
-                    <h3>Liderado por el <span>Dr. Marco</span></h3>
+                    <h3>Liderado por el <span>Dr. Marcelo</span></h3>
                     <p class="negrilla">
                         Apasionado por la salud bucodental y comprometido con devolverle la confianza y funcionalidad a cada sonrisa.
                     </p>
@@ -48,25 +48,25 @@
                 <div class="services-grid">
 
                     <article class="service-card">
-                        <img src="{{ asset('images/cepillo.png') }}" alt="Cepillo">
+                        <img src="images/cepillo.png" alt="Cepillo">
                         <h4>Limpieza Dental</h4>
                         <p>Profilaxis profunda para prevenir caries, eliminar sarro y mantener tus encías saludables.</p>
                     </article>
 
                     <article class="service-card">
-                        <img src="{{ asset('images/ortodoncia.png') }}" alt="Diente">
+                        <img src="images/ortodoncia.png" alt="Diente">
                         <h4>Ortodoncia</h4>
                         <p>Alineación dental mediante brackets o alineadores invisibles para una sonrisa perfecta.</p>
                     </article>
 
                     <article class="service-card">
-                        <img src="{{ asset('images/blanqueamiento.png') }}" alt="Diente Limpio">
+                        <img src="images/blanqueamiento.png" alt="Diente Limpio">
                         <h4>Blanqueamiento</h4>
                         <p>Tratamientos estéticos para aclarar el tono de tus dientes de forma segura.</p>
                     </article>
 
                     <article class="service-card">
-                        <img src="{{ asset('images/general.png') }}" alt="Consulta General">
+                        <img src="images/general.png" alt="Consulta General">
                         <h4>Odontología General</h4>
                         <p>Diagnósticos, resinas, curaciones y restauración integral de los dientes.</p>
                     </article>
